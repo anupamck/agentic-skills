@@ -1,0 +1,45 @@
+{
+  "skill_name": "quiz",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Quiz me on Python decorators — I have a coding interview next week",
+      "expected_output": "Should ask setup questions (difficulty, number of questions), then present questions one at a time about Python decorators, tailored for interview prep",
+      "files": [],
+      "assertions": [
+        {"name": "has-setup-phase", "type": "llm_judge"},
+        {"name": "questions-are-numbered", "type": "pattern", "pattern": "Question \\d+[/\\s]"},
+        {"name": "has-five-questions", "type": "pattern", "pattern": "Question 5"},
+        {"name": "interview-relevant-content", "type": "llm_judge"},
+        {"name": "has-score-summary", "type": "llm_judge"},
+        {"name": "has-gap-analysis", "type": "llm_judge"}
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Quiz me on this paper",
+      "expected_output": "Should read the paper file, ask any clarifying questions, then generate questions grounded in the paper's actual content",
+      "files": ["papers/ai/2025-deep-dive-into-llms-like-chatgpt.md"],
+      "assertions": [
+        {"name": "has-setup-phase", "type": "llm_judge"},
+        {"name": "questions-are-numbered", "type": "pattern", "pattern": "Question \\d+[/\\s]"},
+        {"name": "grounded-in-paper", "type": "llm_judge"},
+        {"name": "has-score-summary", "type": "llm_judge"},
+        {"name": "has-gap-analysis", "type": "llm_judge"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I want to test my understanding of git branching",
+      "expected_output": "Should confirm the topic, ask about preferences, then run an interactive quiz on git branching concepts",
+      "files": [],
+      "assertions": [
+        {"name": "has-setup-phase", "type": "llm_judge"},
+        {"name": "questions-are-numbered", "type": "pattern", "pattern": "Question \\d+[/\\s]"},
+        {"name": "has-five-questions", "type": "pattern", "pattern": "Question 5"},
+        {"name": "has-score-summary", "type": "llm_judge"},
+        {"name": "has-gap-analysis", "type": "llm_judge"}
+      ]
+    }
+  ]
+}
