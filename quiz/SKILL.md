@@ -23,6 +23,8 @@ If the user points to source material, read it carefully before generating quest
 
 If no source material is provided, draw on your knowledge of the topic. Aim for questions that test conceptual understanding and application, not just trivia.
 
+**No trivia questions.** Never ask the user to recall specific numbers, dates, names, URLs, or other facts that test memorization rather than understanding. Every question should require the user to explain a mechanism, reason about a tradeoff, connect concepts, or apply an idea to a scenario. If a question could be answered by ctrl-F through the source material without understanding it, it's a bad question — rewrite it.
+
 ### Phase 2: Questioning
 
 Present questions **one at a time**. For each question:
